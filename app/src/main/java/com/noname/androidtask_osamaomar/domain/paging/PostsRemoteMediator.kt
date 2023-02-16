@@ -8,12 +8,11 @@ import androidx.room.withTransaction
 import com.noname.androidtask_osamaomar.data.local.room.LocalPost
 import com.noname.androidtask_osamaomar.data.local.room.PostsDatabase
 import com.noname.androidtask_osamaomar.domain.Repository
-import com.noname.androidtask_osamaomar.models.Post
 import retrofit2.HttpException
 import java.io.IOException
 
 @OptIn(ExperimentalPagingApi::class)
-class MoviesRemoteMediator(
+class PostsRemoteMediator(
     private val postsApiService: Repository,
     private val postsDatabase: PostsDatabase,
 ) : RemoteMediator<Int, LocalPost>() {

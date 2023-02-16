@@ -8,10 +8,9 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.noname.androidtask_osamaomar.data.local.room.LocalPost
 import com.noname.androidtask_osamaomar.databinding.ArticleListItemBinding
-import com.noname.androidtask_osamaomar.models.Post
 
-class ArticlesAdapter(private val context: Context,private val listener: OnItemClickListener) :
-    PagingDataAdapter<LocalPost,ArticlesAdapter.AdapterViewHolder>(differCallback) {
+class PostsAdapter(private val context: Context, private val listener: OnItemClickListener) :
+    PagingDataAdapter<LocalPost,PostsAdapter.AdapterViewHolder>(differCallback) {
 
 
 

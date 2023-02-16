@@ -18,14 +18,14 @@ class LocalModule {
 
     @Singleton
     @Provides
-    fun provideMovieDatabase(@ApplicationContext context: Context): PostsDatabase =
+    fun providePostsDatabase(@ApplicationContext context: Context): PostsDatabase =
         Room.databaseBuilder(context, PostsDatabase::class.java, "posts_database")
             .fallbackToDestructiveMigration()
             .build()
 
     @Singleton
     @Provides
-    fun provideMoviesDao(postsDatabase: PostsDatabase): PostsDao = postsDatabase.getPostsDao()
+    fun providePostsDao(postsDatabase: PostsDatabase): PostsDao = postsDatabase.getPostsDao()
 
 
 }

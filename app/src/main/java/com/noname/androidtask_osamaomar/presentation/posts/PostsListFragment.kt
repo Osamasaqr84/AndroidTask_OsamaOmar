@@ -14,7 +14,7 @@ import androidx.paging.LoadState
 import com.noname.androidtask_osamaomar.R
 import com.noname.androidtask_osamaomar.data.local.room.LocalPost
 import com.noname.androidtask_osamaomar.databinding.FragmentPostsBinding
-import com.noname.androidtask_osamaomar.presentation.MainViewModel
+import com.noname.androidtask_osamaomar.presentation.PostsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
@@ -24,8 +24,8 @@ import kotlinx.coroutines.launch
 class PostsListFragment : Fragment(), OnItemClickListener {
 
 
-    private val mainViewModel: MainViewModel by viewModels()
-    private var postsAdapter: ArticlesAdapter? = null
+    private val mainViewModel: PostsViewModel by viewModels()
+    private var postsAdapter: PostsAdapter? = null
     private lateinit var binding: FragmentPostsBinding
 
     private fun observeOnData() {
@@ -65,7 +65,7 @@ class PostsListFragment : Fragment(), OnItemClickListener {
 
 
     private fun initUi() {
-        postsAdapter = ArticlesAdapter(requireContext(), this)
+        postsAdapter = PostsAdapter(requireContext(), this)
         binding.rvArticels.adapter = postsAdapter
     }
 
