@@ -25,4 +25,7 @@ class RepositoryModule {
     fun providesDataSource( apiService: ApiService) : TaskRemoteDataSource = TaskRemoteDataSource(apiService)
 
 
+    @Singleton
+    @Provides
+    fun providesRepository(remoteDataSource: TaskRemoteDataSource) : Repository = RepositoryImp(remoteDataSource)
 }
